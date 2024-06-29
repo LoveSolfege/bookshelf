@@ -49,6 +49,15 @@ const HomePage = () => {
     localStorage.setItem('reviews', JSON.stringify(updatedReviews));
   };
 
+  if (sortedReviews.length === 0) {
+    return (
+      <Container>
+        <h2>Latest Reviews</h2>
+        <p>You haven't made any reviews yet, add them from the <Link to="/books">Book page</Link> first.</p>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <h2>Latest Reviews</h2>
